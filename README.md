@@ -15,6 +15,10 @@
 
 Lovelace card for your [Shopping List with Grocy integration](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card).
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Anrolosia/Shopping-List-with-Grocy-Card/main/img/showcase.png" alt="Showcase Example" />
+</p>
+
 ## TOC <!-- omit in toc -->
 
 - [Features](#features)
