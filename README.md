@@ -13,11 +13,9 @@
 [hacs-badge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
 [hacs-link]: https://hacs.xyz/
 
-Lovelace card for your [Shopping List with Grocy integration](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card).
+![Shopping-List-with-Grocy-Card](https://raw.githubusercontent.com/Anrolosia/Shopping-List-with-Grocy-Card/main/img/showcase.png)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Anrolosia/Shopping-List-with-Grocy-Card/main/img/showcase.png" alt="Showcase Example" />
-</p>
+Lovelace card for your [Shopping List with Grocy integration](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card).
 
 ## TOC <!-- omit in toc -->
 
