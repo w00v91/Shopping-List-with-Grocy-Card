@@ -2,11 +2,11 @@
 
 [![Stable][releases-shield]][releases] [![Beta][releases-dev-shield]][releases-dev] [![HACS Badge][hacs-badge]][hacs-link] ![Project Maintenance][maintenance-shield] <br/> [![GitHub Activity][commits-shield]][commits] [![License][license-shield]](LICENSE.md)
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/custom-cards/button-card.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/Anrolosia/Shopping-List-with-Grocy-Card.svg
 [commits]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/commits/main
-[license-shield]: https://img.shields.io/github/license/custom-cards/button-card.svg
+[license-shield]: https://img.shields.io/github/license/Anrolosia/Shopping-List-with-Grocy-Card.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
-[releases-shield]: https://img.shields.io/github/release/custom-cards/button-card.svg
+[releases-shield]: https://img.shields.io/github/release/Anrolosia/Shopping-List-with-Grocy-Card.svg
 [releases]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases/latest
 [releases-dev-shield]: https://img.shields.io/github/package-json/v/custom-cards/button-card/dev?label=release%40dev
 [releases-dev]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases
@@ -38,7 +38,7 @@ Lovelace card for your [Shopping List with Grocy integration](https://github.com
 ## Features
 
 - works with [Shopping List with Grocy integration](https://github.com/Anrolosia/Shopping-List-with-Grocy)
-- uses [Button Card](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card) by [@RomRider](https://github.com/RomRider)
+- uses [Button Card](https://github.com/custom-cards/button-card) by [@RomRider](https://github.com/RomRider)
 - uses [Layout Card](https://github.com/thomasloven/lovelace-layout-card) by [@thomasloven](https://github.com/thomasloven)
 - uses [Collapsable Cards](https://github.com/RossMcMillan92/lovelace-collapsable-cards) by [@RossMcMillan92](https://github.com/RossMcMillan92)
 - uses [Bootstrap Grid Card](https://github.com/ownbee/bootstrap-grid-card) by [@ownbee](https://github.com/ownbee)
@@ -86,7 +86,7 @@ Lovelace card for your [Shopping List with Grocy integration](https://github.com
 
 ### Action
 
-All actions supported by [Button Card](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card) by [@RomRider](https://github.com/RomRider).
+All actions supported by [Button Card](https://github.com/custom-cards/button-card) by [@RomRider](https://github.com/RomRider).
 
 :warning: you need to use `'[PRODUCT_ID]'` for the card to replace it by the real product id. See [Custom Buttons](#Custom-Buttons) for an example. :warning:
 
@@ -106,7 +106,7 @@ All actions supported by [Button Card](https://github.com/Anrolosia/Shopping-Lis
 
 ### Confirmation
 
-Same confirmation popup used by [Button Card](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card) by [@RomRider](https://github.com/RomRider).
+Same confirmation popup used by [Button Card](https://github.com/custom-cards/button-card) by [@RomRider](https://github.com/RomRider).
 
 | Name | Type | Default | Supported options | Description |
 | --- | --- | --- | --- | --- |
@@ -177,7 +177,7 @@ sort_by:
 
 ### Custom Buttons
 
-An array of custom [Button Card](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card) by [@RomRider](https://github.com/RomRider).
+An array of custom [Button Card](https://github.com/custom-cards/button-card) by [@RomRider](https://github.com/RomRider).
 
 :warning: you need to use `'[PRODUCT_ID]'` for the card to replace it by the real product id. :warning:
 
@@ -200,30 +200,11 @@ custom_buttons:
 
 ### Manual Installation
 
-1. Download the [button-card](http://www.github.com/custom-cards/button-card/releases/latest/download/button-card.js)
-2. Place the file in your `config/www` folder
-3. Include the card code in your `ui-lovelace-card.yaml`
-
-   ```yaml
-   title: Home
-   resources:
-     - url: /local/button-card.js
-       type: module
-   ```
-
-4. Write configuration for the card in your `ui-lovelace.yaml`
+...Incoming
 
 ### Installation and tracking with `hacs`
 
-1. Make sure the [HACS](https://github.com/custom-components/hacs) component is installed and working.
-2. Search for `button-card` and add it through HACS
-3. Add the configuration to your `ui-lovelace.yaml`
-
-   ```yaml
-   resources:
-     - url: /hacsfiles/button-card/button-card.js
-       type: module
-   ```
+...Incoming
 
 4. Refresh home-assistant.
 

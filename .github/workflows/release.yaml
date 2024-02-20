@@ -1,42 +1,36 @@
 name: Release
 
-on: workflow_dispatch
+on:
+  release:
+    types: [published]
 
 jobs:
-  release-bundle:
+  release:
+    name: Prepare release
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
-
-    outputs:
-      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
-      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
-
     steps:
-      - name: Cache pnpm modules
-        id: cache-modules
-        uses: actions/cache@v2
+      - uses: actions/checkout@v1
+
+      # Build
+      - name: Cache Dependencies
+        uses: actions/cache@v1
         with:
-          path: |
-            ~/.pnpm-store
-            **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'rollup.config.js') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: latest
-          run_install: false
-
-      - name: Install Packages
-        if: steps.cache-modules.outputs.cache-hit != 'true'
-        run: pnpm install
-
+            ${{ runner.os }}-node-
+      - name: Install Dependencies
+        run: npm ci
       - name: Build
-        run: pnpm build
+        run: npm run build
 
-      - name: Release
-        run: pnpx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Upload build file to the releas as an asset.
+      - name: Upload zip to release
+        uses: svenstaro/upload-release-action@v1-release
+
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/shopping-list-with-grocy-card.js
+          asset_name: shopping-list-with-grocy-card.js
+          tag: ${{ github.ref }}
+          overwrite: true
