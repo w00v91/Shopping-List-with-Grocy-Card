@@ -8,7 +8,7 @@
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [releases-shield]: https://img.shields.io/github/release/Anrolosia/Shopping-List-with-Grocy-Card.svg
 [releases]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases/latest
-[releases-dev-shield]: https://img.shields.io/github/package-json/v/custom-cards/button-card/dev?label=release%40dev
+[releases-dev-shield]: https://img.shields.io/github/package-json/v/Anrolosia/Shopping-List-with-Grocy-Card/dev?label=release%40dev
 [releases-dev]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases
 [hacs-badge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
 [hacs-link]: https://hacs.xyz/
@@ -200,7 +200,16 @@ custom_buttons:
 
 ### Manual Installation
 
-...Incoming
+1. Download the [shopping-list-with-grocy-card](https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases/latest/download/shopping-list-with-grocy-card.js)
+2. Place the file in your `config/www` folder
+3. Include the card code in your `ui-lovelace-card.yaml`
+
+   ```yaml
+   title: Home
+   resources:
+     - url: /local/shopping-list-with-grocy-card.js
+       type: module
+   ```
 
 ### Installation and tracking with `hacs`
 
