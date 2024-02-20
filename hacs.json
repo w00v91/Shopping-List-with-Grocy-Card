@@ -1,0 +1,7 @@
+{
+    "name": "Shopping List With Grocy Card",
+    "render_readme": true,
+    "filename": "shopping-list-with-grocy-card.js",
+    "content_in_root": false,
+    "homeassistant": "2023.7.0"
+  }
