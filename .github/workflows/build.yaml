@@ -25,7 +25,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: shopping-list-with-grocy-card.js
           path: dist/shopping-list-with-grocy-card.js

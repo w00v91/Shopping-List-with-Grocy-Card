@@ -1,15 +1,13 @@
 # Shopping List with Grocy Card by [@Anrolosia](https://github.com/Anrolosia) <!-- omit in toc -->
 
-[![Stable][releases-shield]][releases] [![Beta][releases-dev-shield]][releases-dev] [![HACS Badge][hacs-badge]][hacs-link] ![Project Maintenance][maintenance-shield] <br/> [![GitHub Activity][commits-shield]][commits] [![License][license-shield]](LICENSE.md)
+[![Stable][releases-shield]][releases] [![HACS Badge][hacs-badge]][hacs-link] ![Project Maintenance][maintenance-shield] <br/> [![GitHub Activity][commits-shield]][commits] [![License][license-shield]](LICENSE.md)
 
 [commits-shield]: https://img.shields.io/github/commit-activity/y/Anrolosia/Shopping-List-with-Grocy-Card.svg
 [commits]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/commits/main
 [license-shield]: https://img.shields.io/github/license/Anrolosia/Shopping-List-with-Grocy-Card.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [releases-shield]: https://img.shields.io/github/release/Anrolosia/Shopping-List-with-Grocy-Card.svg
 [releases]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases/latest
-[releases-dev-shield]: https://img.shields.io/github/package-json/v/Anrolosia/Shopping-List-with-Grocy-Card/dev?label=release%40dev
-[releases-dev]: https://github.com/Anrolosia/Shopping-List-with-Grocy-Card/releases
 [hacs-badge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
 [hacs-link]: https://hacs.xyz/
 
@@ -215,7 +213,17 @@ custom_buttons:
 
 ### Installation and tracking with `hacs`
 
-...Incoming
+This integration is available in [HACS](https://hacs.xyz/) (Home Assistant Community Store). You can click on
+
+<a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=anrolosia&repository=shopping-list-with-grocy-card" target="_blank"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance and open a repository inside the Home Assistant Community Store." /></a>
+
+or install it manually as follows:
+
+- In Home Assistant, go to HACS > Integrations
+- Press the **Explore & Add Repositories** button
+- Search for "Grocy" and choose this integration
+- Press the **Install this repository in HACS** button
+- Press the **Install** button
 
 4. Refresh home-assistant.
 
