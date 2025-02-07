@@ -13,7 +13,8 @@ class ShoppingListWithGrocyShoppingListCard extends LitElement {
   @property() _config;
   @property() hass: any;
   @property() card;
-
+  @property({ type: String }) searchTerm = '';
+  
   _entities: EntityList;
   _cardsEntities: CardList;
   _cardBuilt?: Promise<void>;
@@ -109,6 +110,32 @@ class ShoppingListWithGrocyShoppingListCard extends LitElement {
     }
 
     const productArray = get_products(states, this._config, true);
+
+    if (this.searchTerm && this.searchTerm.trim() !== '') {
+      // Annahme: productArray ist entweder ein Objekt oder Array, je nachdem, ob gruppiert wird
+      // Wenn gruppiert, iteriere über die Gruppen und filtere die Produkte innerhalb jeder Gruppe:
+      if (this._config.hasOwnProperty('group_by') && this._config.group_by !== '') {
+        for (const [location, products] of Object.entries(productArray)) {
+          // products ist hier ein Objekt oder Array – passe das an deinen Fall an
+          const filteredProducts = {};
+          Object.entries(products).forEach(([key, product]: [string, any]) => {
+            if (product.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
+              filteredProducts[key] = product;
+            }
+          });
+          productArray[location] = filteredProducts;
+        }
+      } else {
+        // Bei nicht gruppierter Liste – falls productArray ein Objekt ist:
+        const filtered = {};
+        Object.entries(productArray).forEach(([key, product]: [string, any]) => {
+          if (product.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
+            filtered[key] = product;
+          }
+        });
+        productArray = filtered;
+      }
+    }
 
     Object.values(productArray).map((value) => {
       const entity = value[1] as ProductConfig;
@@ -300,8 +327,26 @@ class ShoppingListWithGrocyShoppingListCard extends LitElement {
   createRenderRoot() {
     return this;
   }
+  
   render() {
-    return html`${this.card}`;
+    return html`
+      <div>
+        <input
+          type="text"
+          placeholder="Suche Zutaten..."
+          @input="${this._updateSearchTerm}"
+          style="width: 100%; padding: 8px; margin-bottom: 10px;"
+        />
+      </div>
+      ${this.card}
+    `;
+  }
+
+  _updateSearchTerm(e: Event) {
+    const target = e.target as HTMLInputElement;
+    this.searchTerm = target.value;
+    // Wenn sich der Suchbegriff ändert, möchten wir auch die Karten neu aufbauen:
+    this.update_all();
   }
 
   async getCardSize() {
